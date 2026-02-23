@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Web Page gavanes.html</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="main-nav">
+    <div class="nav-links">
+      <button class="nav-btn" onclick="openTab('about')">About</button>
+      <button class="nav-btn" onclick="openTab('hobbies')">Hobbies</button>
+      <button class="nav-btn" onclick="openTab('favorites')">Favorites</button>
+      <button class="nav-btn" onclick="openTab('contact')">Contact</button>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <section class="profile-header">
+      <div class="box-frame">
+        <img src="img.jpg" alt="Gabriel Gavanes" class="main-photo">
+      </div>
+      <h1>Gabriel Gavanes | Personal Page</h1>
+      <p class="age-badge">19 Years Old</p>
+      <p class="intro-quote">"Current weaknesses are just future strengths."</p>
+    </section>
+
+    <article id="about" class="tab-content">
+      <h2>About Me</h2>
+      <p>I'm <strong>Gabriel Gavanes</strong>. I’m a firm believer that my current weaknesses are just future strengths waiting to be mastered. Whether I’m hitting the gym, playing ball, or exploring things I’m not yet good at, I’m always in the process of leveling up. I’m a music lover, a friendly face, and someone you can always count on when things get tough.</p>
+    </article>
+
+    <article id="hobbies" class="tab-content">
+      <h3>My Hobbies</h3>
+      <ul class="hobby-list">
+        <li><span></span> Playing Basketball</li>
+        <li><span></span> Playing Online Games</li>
+        <li><span></span> Doing Tiktok</li>
+      </ul>
+
+      <div class="video-container">
+  <h4>Tiktok / Game Highlights</h4>
+  <video controls>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+    </article>
+
+    <article id="favorites" class="tab-content">
+      <h4>Artist & Music</h4>
+      <div class="fav-grid">
+        <div class="fav-item">
+          <h4>Favorite Artists</h4>
+          <ul>
+            <li>Arthur Nery</li>
+            <li>Wilbert Ross</li>
+            <li>Adie</li>
+          </ul>
+        </div>
+        <div class="fav-item">
+          <h3>Top Tracks</h3>
+          <ul>
+            <li>Isa lang</li>
+            <li>Ginintuang Tanawin</li>
+            <li>Mahika</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="audio-section">
+        <p>Now Playing: <strong>Arthur Nery - Isa lang</strong></p>
+        <audio controls>
+          <source src="music.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </article>
+
+    <article id="contact" class="tab-content">
+      <h5>Contact</h5>
+      <p>Let's connect!</p>
+      <a href="mailto:gabrielgavanes02@gmail.com" class="email-link">gabrielgavanes02@gmail.com</a>
+    </article>
+  </main>
+
+  <script>
+    function openTab(tabName) {
+      let contents = document.getElementsByClassName("tab-content");
+      for (let i = 0; i < contents.length; i++) {
+        contents[i].style.display = "none";
+        contents[i].classList.remove("active-tab");
+      }
+      
+      let target = document.getElementById(tabName);
+      target.style.display = "block";
+      setTimeout(() => target.classList.add("active-tab"), 10);
+    }
+
+    window.onload = () => openTab('about');
+  </script>
+
+</body>
+</html>
